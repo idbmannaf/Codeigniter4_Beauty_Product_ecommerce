@@ -1,0 +1,23 @@
+Order=>
+total
+discount
+subtotal
+order_status:
+	pending 1
+	prossesing 2
+	delivered 3
+	Return 4
+
+payment_status:
+	COD 1
+	Online 2
+
+
+order_Details=>
+
+order_id
+product_name
+product_price
+product_quantity
+
+order_billing_details=>

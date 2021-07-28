@@ -1,0 +1,171 @@
+/*  Student Add Subject Modal */
+
+#modalSelectSubject .modal-dialog{
+
+	overflow-y: initial !important
+	
+}
+
+#modalSelectSubject .modal-body{
+
+    height: 500px;
+	overflow-y: auto;
+	
+}
+
+
+/* Student Payment & Teacher Salary Invoice */
+
+#modalInvoice .div-logo {
+	
+	height: 130px;
+}
+
+#modalInvoice .logo{
+	
+	width: 90px;
+	height: 90px;	
+	border-radius: 50%;
+	
+}
+
+#modalInvoice h2, #modalInvoice h3{
+
+	color:#8860a7;
+
+}
+
+#modalInvoice .school-email {
+	float: right;
+	color:white;
+	background-color:#8860a7;
+}
+
+#modalInvoice .student-name{
+
+	color:#8860a7;
+
+}
+
+#modalInvoice .current-date{
+
+	float: right;
+}
+
+#modalInvoice .t-head{
+
+	color:white;
+	background-color:#8860a7;
+
+}
+
+#modalInvoice .thanks{
+	display:none;	
+}
+
+
+@media print{
+
+	#divShowInvoice{
+
+		height: 800px ;
+	}
+
+	body{
+		
+		visibility: hidden;
+		
+	
+	}
+
+
+	#modalInvoice{
+		
+		visibility: visible;
+		
+		
+
+	 
+
+	}
+
+	#modalInvoice .modal-content{
+
+		width: 1000px;
+		
+		margin-left: -225px;
+		border: hidden;
+		
+	}
+
+
+	#modalInvoice .t-head th{
+
+		color: white !important;
+		background-color:#8860a7 !important;
+
+	}
+
+	#modalInvoice .modal-footer{
+
+		display: none;
+		
+
+	}
+
+	
+
+	#modalInvoice .thanks{
+		display:inline;	
+		color: #8860a7;
+	}
+
+	@page { 
+		
+		margin: 0;
+		
+	
+	}
+	
+
+}
+
+/* Login Page */
+
+.login-body{
+
+	background-image: url("../uploads/bg.jpg");
+	background-size: cover;
+}
+
+.logo-text{
+
+	color: #8860a7;
+}
+
+.signin-btn{
+
+	background-color:#8860a7;
+	color: white;
+}
+
+.signin-btn:hover{
+
+	background-color:#8860a7;
+	
+}
+
+.pCreatAdmin{
+
+	margin-top: 10px;
+	
+}
+
+/* Student Dashboard */
+
+#mySubject th{
+
+	background-color: #8860a7;
+	color: white;
+}
+
