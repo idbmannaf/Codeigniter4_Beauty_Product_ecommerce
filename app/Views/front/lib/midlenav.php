@@ -1,4 +1,5 @@
 <!-- Logo, Shop-menu - start -->
+<?php //echo get_cookie('generated_cart_id')?>
 <div class="header-middle">
     <div class="container header-middle-cont">
         <div class="toplogo">
@@ -61,8 +62,15 @@
                             <span class="shop-menu-ttl">Cart</span>
                             (<b class="text-danger"><?php
                                 $cartItem= new \App\Models\CartModel();
-                                $c= $cartItem->where('generated_cart_id',get_cookie('generated_cart_id'))->findAll();
-                                echo count($c);
+
+                                if (isset($_COOKIE["generated_cart_id"])) {
+                                    $c= $cartItem->where('generated_cart_id',$_COOKIE["generated_cart_id"])->findAll();
+                                    echo count($c);
+                                } else {
+                                    echo 0;
+                                }
+
+
 //
                             ?></b>)
                         </a>

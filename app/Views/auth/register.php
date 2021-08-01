@@ -42,11 +42,6 @@
                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Enter Confirmation Password" value="<?php echo set_value('cpassword') ?>">
                     <span class="text-danger"><?php echo isset($validation)?  display_error($validation,'cpassword'):'' ?>
                 </div>
-<!--                <div class="form-group my-2">-->
-<!--                    <lable for="role">Role</lable>-->
-<!--                    <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Enter Confirmation Password" value="--><?php //echo set_value('cpassword') ?><!--">-->
-<!--                    <span class="text-danger">--><?php //echo isset($validation)?  display_error($validation,'cpassword'):'' ?>
-<!--                </div>-->
                 <div class="form-group">
                     <button class="btn btn-info form-control" type="submit">Sign Up</button>
                 </div>

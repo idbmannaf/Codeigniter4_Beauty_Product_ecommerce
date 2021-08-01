@@ -54,20 +54,22 @@ class CartController extends BaseController
     }
     public function addtocart(){
 
+        setcookie("TestCookie", "nothing", time()+3600);
+        //Cookie Not working
        if (get_cookie('generated_cart_id')){
            $generated_cart_id= get_cookie('generated_cart_id');
        }else{
 
            $generated_cart_id=random_string('alnum', 16);
-           setcookie("generated_cart_id", $generated_cart_id, time()+2*24*60*60);
-//           session()->set('generated_cart_id',$generated_cart_id);
-//           set_cookie([
-//               'name' => 'generated_cart_id',
-//               'value' =>$generated_cart_id,
-//               'expire' => 432000,
-//               'httponly' => false
-//           ]);
+           session()->set('generated_cart_id',$generated_cart_id);
+           set_cookie([
+               'name' => 'generated_cart_id',
+               'value' =>$generated_cart_id,
+               'expire' => 432000,
+               'httponly' => false
+           ]);
        }
+        //Cookie Not working
        if ($this->cart->where('generated_cart_id',$generated_cart_id)->where('product_id',$this->request->getPost('product_id'))->findAll()){
           $r= $this->cart->Where('product_id',$this->request->getPost('product_id'))->findAll();
         foreach ($r as $z){
@@ -94,11 +96,7 @@ class CartController extends BaseController
 
     }
     public function cartPage($coupons = " "){
-        if (isset($_COOKIE["generated_cart_id"])) {
-            $hase_any_item_in_cart=  $this->cart->where('generated_cart_id',$_COOKIE["generated_cart_id"])->findAll();
-//            $c= $cartItem->where('generated_cart_id',$_COOKIE["generated_cart_id"])->findAll();
-//            echo count($c);
-        }
+       $hase_any_item_in_cart=  $this->cart->where('generated_cart_id',get_cookie('generated_cart_id'))->findAll();
     if (!$hase_any_item_in_cart){
         return redirect()->to('/');
     }
